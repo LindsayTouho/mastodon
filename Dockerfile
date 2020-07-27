@@ -125,6 +125,9 @@ ENV NODE_ENV="production"
 ENV RAILS_SERVE_STATIC_FILES="true"
 ENV BIND="0.0.0.0"
 
+COPY ca-certificates /usr/local/share/ca-certificates/
+RUN update-ca-certificates 
+
 # Set the run user
 USER mastodon
 
